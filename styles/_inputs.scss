@@ -1,0 +1,88 @@
+// styles/_inputs.scss (исправленная версия)
+
+.input-group {
+  margin-bottom: $spacing-lg;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.input-label {
+  display: block;
+  color: $text-secondary;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-xs;
+  font-size: 1rem;
+}
+
+.modern-input {
+  width: 100%;
+  padding: $spacing-sm 1.2rem;
+  border: 2px solid #e2e8f0; // Вместо darken($bg-light, 5%)
+  border-radius: $border-radius-md;
+  font-size: 1rem;
+  font-weight: $font-weight-semibold;
+  background: $bg-white;
+  transition: $transition-normal;
+  color: $text-primary;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+
+  &:hover {
+    border-color: $secondary-color;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.range-container {
+  position: relative;
+  margin-top: $spacing-xs;
+}
+
+.range-slider {
+  width: 100%;
+  height: 6px;
+  --webkit-appearance: none;
+  background: #e2e8f0; // Вместо darken($bg-light, 5%)
+  border-radius: 3px;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: $primary-color;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: $transition-normal;
+    box-shadow: $shadow-sm;
+
+    &:hover {
+      background: $secondary-color;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.range-value {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $primary-color;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: $font-weight-semibold;
+  box-shadow: $shadow-sm;
+}

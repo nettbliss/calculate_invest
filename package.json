@@ -1,0 +1,13 @@
+{
+  "name": "investment-calculator",
+  "version": "1.0.0",
+  "description": "Professional investment calculator with modern Sass",
+  "scripts": {
+    "sass:build": "sass styles/main.scss styles/main.css",
+    "sass:watch": "sass --watch styles/main.scss styles/main.css",
+    "sass:build-prod": "sass styles/main.scss styles/main.css --style=compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
+}

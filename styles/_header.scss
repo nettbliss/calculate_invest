@@ -1,0 +1,97 @@
+.header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  animation: fadeInUp 0.8s ease-out;
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: $spacing-md;
+    line-height: 1.1;
+
+    &-main {
+      display: block;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: $font-weight-extrabold;
+      color: $text-primary;
+      margin-bottom: 0.25rem;
+      // Используем предопределенный темный цвет вместо darken()
+      background: linear-gradient(135deg, $primary-color, $primary-color-dark);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 4px 8px rgba($primary-color, 0.1);
+    }
+
+    &-accent {
+      display: block;
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      font-weight: $font-weight-extrabold;
+      background: linear-gradient(135deg, $accent-color, $primary-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, $accent-color, $primary-color);
+        border-radius: 2px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.3rem;
+    color: $text-secondary;
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacing-xs;
+    opacity: 0.9;
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    color: $accent-color;
+    font-weight: $font-weight-semibold;
+    background: rgba($accent-color, 0.1);
+    padding: $spacing-xs $spacing-md;
+    border-radius: 2rem;
+    display: inline-block;
+    margin-top: $spacing-sm;
+    border: 1px solid rgba($accent-color, 0.2);
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .header {
+    margin-bottom: $spacing-lg;
+
+    &__title {
+      &-main {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+      }
+
+      &-accent {
+        font-size: clamp(2rem, 6vw, 3rem);
+      }
+    }
+
+    &__subtitle {
+      font-size: 1.1rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+      padding: 0.5rem $spacing-sm;
+    }
+  }
+}

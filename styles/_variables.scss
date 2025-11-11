@@ -1,0 +1,68 @@
+// Colors with modern approach
+$primary-color: #083e9e;
+$primary-color-dark: #062a7a; // Вместо darken($primary-color, 10%)
+$secondary-color: #0088cc;
+$accent-color: #00c896;
+$accent-color-light: #4cd8b4;
+$success-color: #00c896;
+$warning-color: #ffb800;
+$error-color: #ff4757;
+
+$text-primary: #2d3748;
+$text-secondary: #4a5568;
+$text-light: #718096;
+
+$bg-white: #ffffff;
+$bg-light: #f8fafc;
+$bg-light-dark: #e2e8f0;
+$bg-lighter: rgba(0, 136, 204, 0.08);
+$border-light: #e2e8f0;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $primary-color, $secondary-color);
+$gradient-accent: linear-gradient(135deg, $accent-color, $accent-color-light);
+$gradient-bg: linear-gradient(135deg, $bg-light, $bg-light-dark);
+
+// Typography
+$font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 4rem;
+
+// Border radius
+$border-radius-sm: 0.5rem;
+$border-radius-md: 0.75rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.25rem;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.5s ease;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1200px;
+
+// Z-index
+$z-dropdown: 1000;
+$z-tooltip: 1100;
+$z-modal: 1200;

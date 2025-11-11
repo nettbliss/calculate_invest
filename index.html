@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Инвестиционный калькулятор | Профессиональный инструмент</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="header__title-main">Инвестиционный</span>
+            <span class="header__title-accent">калькулятор</span>
+          </h1>
+          <p class="header__subtitle">
+            Профессиональный инструмент для точного прогнозирования
+          </p>
+          <div class="header__description">
+            Рассчитайте потенциальный рост с учетом сложного процента
+          </div>
+        </div>
+      </header>
+
+      <div class="calculator-grid">
+        <section class="visualization">
+          <h2 class="visualization__title">Визуализация роста инвестиций</h2>
+          <div class="chart-container">
+            <svg class="line-chart" id="lineChart"></svg>
+          </div>
+          <div class="chart-labels" id="chartLabels">
+            <span>Начало</span>
+            <span>Итог</span>
+          </div>
+        </section>
+
+        <section class="input-section">
+          <div class="input-group">
+            <label class="input-label">Начальная сумма инвестиций</label>
+            <input
+              type="number"
+              class="modern-input"
+              id="initialAmount"
+              value="50000"
+              min="1000"
+            />
+            <div class="range-container">
+              <div class="range-value" id="amountValue">50,000 ₽</div>
+              <input
+                type="range"
+                class="range-slider"
+                id="amountRange"
+                min="1000"
+                max="10000000"
+                value="50000"
+                step="1000"
+              />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">Срок инвестирования (лет)</label>
+            <input
+              type="number"
+              class="modern-input"
+              id="investmentYears"
+              value="3"
+              min="1"
+              max="30"
+            />
+            <div class="range-container">
+              <div class="range-value" id="yearsValue">3 года</div>
+              <input
+                type="range"
+                class="range-slider"
+                id="yearsRange"
+                min="1"
+                max="30"
+                value="3"
+              />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">Годовая доходность (%)</label>
+            <input
+              type="number"
+              class="modern-input"
+              id="annualReturn"
+              value="12"
+              min="1"
+              max="50"
+              step="0.1"
+            />
+            <div class="range-container">
+              <div class="range-value" id="returnValue">12%</div>
+              <input
+                type="range"
+                class="range-slider"
+                id="returnRange"
+                min="1"
+                max="50"
+                value="12"
+                step="0.1"
+              />
+            </div>
+          </div>
+
+          <div class="result-section">
+            <div class="result-label">
+              Результирующий баланс через <span id="yearsDisplay">3 года</span>
+            </div>
+            <div class="result-amount" id="finalAmount">70,246 ₽</div>
+            <div class="result-details">
+              <div>Прибыль: <span id="totalProfit">20,246 ₽</span></div>
+              <div>Рост: <span id="growthPercent">40.5%</span></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="advanced-controls">
+        <h3 class="controls-title">Стратегия инвестирования</h3>
+        <div class="control-grid">
+          <div class="control-item" data-type="conservative">
+            <div class="stat-value">5-8%</div>
+            <div class="stat-label">Консервативный</div>
+            <div class="risk-level">Низкий риск</div>
+          </div>
+          <div class="control-item active" data-type="balanced">
+            <div class="stat-value">10-15%</div>
+            <div class="stat-label">Сбалансированный</div>
+            <div class="risk-level">Умеренный риск</div>
+          </div>
+          <div class="control-item" data-type="aggressive">
+            <div class="stat-value">15-25%</div>
+            <div class="stat-label">Агрессивный</div>
+            <div class="risk-level">Высокий риск</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="interactive-stats">
+        <div class="stat-card" onclick="showMonthlyDetails()">
+          <div class="stat-value" id="monthlyGrowth">562 ₽</div>
+          <div class="stat-label">Средний месячный рост</div>
+        </div>
+        <div class="stat-card" onclick="showYearlyDetails()">
+          <div class="stat-value" id="yearlyGrowth">6,749 ₽</div>
+          <div class="stat-label">Средний годовой рост</div>
+        </div>
+        <div class="stat-card" onclick="showTotalDetails()">
+          <div class="stat-value" id="totalReturn">40.5%</div>
+          <div class="stat-label">Общая доходность</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="chart-tooltip" id="chartTooltip"></div>
+
+    <script src="./js/calculator.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
